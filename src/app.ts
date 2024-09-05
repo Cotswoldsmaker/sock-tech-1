@@ -1,6 +1,10 @@
 import express, { Application } from "express";
 import path from "path";
 import fs from "fs";
+import { runFlow } from "./flows";
+import e from "express";
+
+const AWAIT_PROMISE = true;
 
 export const app: Application = express();
 const port = 3000;
@@ -15,13 +19,32 @@ app.get("/", (req, res): void => {
   res.render("index", content);
 });
 
-app.post("/flow/:flow_name", (req, res): void => {
+app.post("/flow/:flow_name", async (req, res): Promise<void> => {
   const flowName = req.params.flow_name;
 
   const filePath: string = path.join(__dirname, `../flows/${flowName}.json`);
   const rawData: string = fs.readFileSync(filePath, "utf-8");
   const processConfig: { [key: string]: any } = JSON.parse(rawData);
-  res.json({ result: `hi, ${JSON.stringify(processConfig)}` });
+  let runFlowResult: string = "";
+
+  async function executeFlow() {
+    try {
+      runFlowResult = await runFlow(processConfig);
+      console.log("herereer", runFlowResult);
+    } catch (error) {
+      console.error("Error running flow:", error);
+    }
+  }
+  if (AWAIT_PROMISE) {
+    await executeFlow();
+  } else {
+    executeFlow();
+    runFlowResult = "Flow started and still pending";
+  }
+
+  res.json({
+    result: `Flow results: ${runFlowResult}`,
+  });
 });
 
 export const server = app.listen(port, () => {

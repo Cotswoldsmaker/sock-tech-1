@@ -5,7 +5,7 @@
       "step": "socksPurchased"
     },
     {
-      "step": "email",
+      "step": "sendEmailFlow",
       "arg": {
         "testAddress": "test@test.com",
         "subject": "Payment received!",
@@ -13,7 +13,7 @@
       }
     },
     {
-      "step": "email",
+      "step": "sendEmailFlow",
       "arg": {
         "testAddress": "test@test.com",
         "subject": "Socks dispatched!",

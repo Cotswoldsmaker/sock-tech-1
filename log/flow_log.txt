@@ -1,0 +1,35 @@
+2024-09-05T10:06:03.367Z - websiteSignup called
+2024-09-05T10:06:07.990Z - websiteSignup called
+2024-09-05T10:08:28.378Z - websiteSignup called
+2024-09-05T10:08:31.895Z - websiteSignup called
+2024-09-05T10:09:07.612Z - websiteSignup called
+2024-09-05T10:09:59.071Z - websiteSignup called
+2024-09-05T10:12:29.769Z - websiteSignup called
+2024-09-05T10:13:29.221Z - websiteSignup called
+2024-09-05T10:13:47.384Z - websiteSignup called
+2024-09-05T10:14:19.461Z - websiteSignup called
+2024-09-05T10:14:20.463Z - waitSetTime called with NaN minutes
+2024-09-05T10:14:57.348Z - websiteSignup called
+2024-09-05T10:14:58.351Z - waitSetTime called with 0.1 minutes
+2024-09-05T10:15:29.326Z - websiteSignup called
+2024-09-05T10:15:30.329Z - waitSetTime called with 0.02 minutes
+2024-09-05T10:18:47.022Z - websiteSignup called
+2024-09-05T10:18:48.025Z - waitSetTime called with 0.02 minutes
+2024-09-05T10:19:07.147Z - websiteSignup called
+2024-09-05T10:19:08.150Z - waitSetTime called with 0.02 minutes
+2024-09-05T10:19:09.352Z - email called
+2024-09-05T10:21:37.749Z - websiteSignup called
+2024-09-05T10:21:38.751Z - waitSetTime called with 0.02 minutes
+2024-09-05T10:21:39.951Z - email called
+2024-09-05T10:23:09.837Z - websiteSignup called
+2024-09-05T10:23:10.838Z - waitSetTime called with 0.02 minutes
+2024-09-05T10:23:12.040Z - email called
+2024-09-05T10:23:14.547Z - websiteSignup called
+2024-09-05T10:23:15.549Z - email called
+2024-09-05T10:23:16.551Z - email called
+2024-09-05T10:23:20.815Z - websiteSignup called
+2024-09-05T10:23:21.816Z - email called
+2024-09-05T10:23:22.818Z - email called
+2024-09-05T10:23:29.963Z - websiteSignup called
+2024-09-05T10:23:30.965Z - email called
+2024-09-05T10:23:31.967Z - email called

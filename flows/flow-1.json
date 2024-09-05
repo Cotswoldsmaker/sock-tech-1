@@ -5,11 +5,11 @@
       "step": "websiteSignup"
     },
     {
-      "step": "wait",
-      "arg": { "minutes": 120 }
+      "step": "waitSetTime",
+      "arg": { "minutes": 0.02 }
     },
     {
-      "step": "email",
+      "step": "sendEmailFlow",
       "arg": {
         "testAddress": "test@test.com",
         "subject": "Welcome!",
