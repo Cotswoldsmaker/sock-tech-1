@@ -1,7 +1,8 @@
 # sock-tech-1
+
 Prototype of customisable market workflow solution.
 
-## Setup:
+## Setup
 
 1. Make sure you have node and npm installed. You can check if node is installed with:
 
@@ -19,6 +20,13 @@ and npm with
 4. Start the server with:
 
 ```$ npm run dev```
+
+5. The server will be running on port 3000. You can access the server at:
+
+```http://localhost:3000```
+
+6. Click on the either of the `Flow` buttons to run the required flow.
+7. You can monitor the output of the flow in the console.
 
 ## Notes:
 

@@ -6,7 +6,7 @@ export const runFlow = async (flow: {
 }): Promise<string> => {
   let flowResults: string = "";
 
-  console.log("Starting flow");
+  console.log(`Starting flow - ${flow.name}`);
 
   for (const step of flow.steps) {
     const functionName = step.step;
@@ -28,7 +28,7 @@ export const runFlow = async (flow: {
   if (flowResults.endsWith(", ")) {
     flowResults = flowResults.slice(0, -2);
   }
-  console.log("Flow complete");
+  console.log(`Flow complete - ${flow.name}`);
   return flowResults;
 };
 

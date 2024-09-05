@@ -38,7 +38,10 @@ app.post("/flow/:flow_name", async (req, res): Promise<void> => {
     await executeFlow();
   } else {
     executeFlow();
-    runFlowResult = "Flow started and still pending";
+    runFlowResult =
+      "Flow started and still pending. " +
+      "Browser will not update with results. " +
+      "Please monitor in console";
   }
 
   res.json({

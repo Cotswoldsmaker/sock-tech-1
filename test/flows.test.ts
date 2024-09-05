@@ -1,4 +1,4 @@
-import { waitSetTime, sendEmailFlow } from "../src/flows";
+import { runFlow, waitSetTime, sendEmailFlow } from "../src/flows";
 import { sendEmail } from "../src/email";
 import { logToFile } from "../src/log";
 

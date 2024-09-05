@@ -35,6 +35,7 @@ describe("POST /flow/<flow_name> API", () => {
     const response = await request(app).post("/flow/flow-1");
 
     expect(response.status).toBe(200);
+    // The below will fail if 'AWAIT_PROMISE == false'
     expect(response.body.result).toBe("Flow results: success");
   });
 });
