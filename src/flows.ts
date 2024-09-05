@@ -6,6 +6,8 @@ export const runFlow = async (flow: {
 }): Promise<string> => {
   let flowResults: string = "";
 
+  console.log("Starting flow");
+
   for (const step of flow.steps) {
     const functionName = step.step;
     const func = flowMap[functionName];
@@ -17,7 +19,7 @@ export const runFlow = async (flow: {
     try {
       const result = await func(arg);
       flowResults += `${functionName} - ${result}, `;
-      console.log(result);
+      console.log(`${functionName} - ${result}`);
     } catch {
       console.error(`Function "${functionName}" not found`);
       flowResults += `${functionName} - Function not found, `;
@@ -26,11 +28,11 @@ export const runFlow = async (flow: {
   if (flowResults.endsWith(", ")) {
     flowResults = flowResults.slice(0, -2);
   }
-
+  console.log("Flow complete");
   return flowResults;
 };
 
-const delay = (ms: number): Promise<void> => {
+export const delay = (ms: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
@@ -69,12 +71,13 @@ export const waitSetTime = async (arg: {
 export const sendEmailFlow = async (arg: {
   [key: string]: string;
 }): Promise<string> => {
-  logToFile("email called");
   const emailSent: Boolean = await sendEmail();
 
   if (emailSent) {
+    logToFile("sent");
     return "sent";
   } else {
+    logToFile("failed");
     return "failed";
   }
 };

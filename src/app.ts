@@ -2,7 +2,6 @@ import express, { Application } from "express";
 import path from "path";
 import fs from "fs";
 import { runFlow } from "./flows";
-import e from "express";
 
 const AWAIT_PROMISE = true;
 
@@ -30,9 +29,9 @@ app.post("/flow/:flow_name", async (req, res): Promise<void> => {
   async function executeFlow() {
     try {
       runFlowResult = await runFlow(processConfig);
-      console.log("herereer", runFlowResult);
     } catch (error) {
       console.error("Error running flow:", error);
+      runFlowResult = "Error running flow";
     }
   }
   if (AWAIT_PROMISE) {
