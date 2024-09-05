@@ -27,8 +27,11 @@ and npm with
 
 6. Click on the either of the `Flow` buttons to run the required flow.
 7. You can monitor the output of the flow in the console.
+8. You can also run tests with:
 
-## Notes:
+```$ npm run test```
+
+## Notes
 
 * The flows are defined in the './flows/' directory.
 * The two sample flows required for SockTech marketing have been included in the './flows/' directory.
