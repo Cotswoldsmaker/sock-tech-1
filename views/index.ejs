@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SockTech Store</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .row {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .col {
+        flex: 1;
+        min-width: 0; /* Prevent overflow */
+      }
+
+      .alert {
+        overflow: auto; /* Add scroll if content overflows */
+      }
+    </style>
+  </head>
+  <body class="container">
+    <h1 class="mt-5">SockTech Store</h1>
+
+    <h4>Test centre</h4>
+
+    <div class="row mt-3">
+      <div class="col text-center">
+        <button type="button" id="flow-1" class="btn btn-primary">
+          Email flow 1
+        </button>
+      </div>
+      <div class="col text-center">
+        <button type="button" id="flow-2" class="btn btn-primary">
+          Email flow 2
+        </button>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col text-center">
+        <div id="ajax-flow-1" class="alert alert-info">
+          Press the above button to trigger email flow 1...
+        </div>
+      </div>
+      <div class="col text-center">
+        <div id="ajax-flow-2" class="alert alert-info">
+          Press the above button to trigger email flow 2...
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      document.querySelectorAll("[id^='flow-']").forEach((button) => {
+        button.addEventListener("click", function () {
+          const flowId = this.id;
+          fetch(`/flow/${flowId}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ key: "value" }), // Adjust the payload as needed
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Display the results in the ajaxProcess1 div
+              document.getElementById(`ajax-${flowId}`).innerText = data.result;
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+      });
+      /*document.getElementById("flow-1").addEventListener("click", function () {
+        fetch("/flow/flow-1", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ key: "value" }), // Adjust the payload as needed
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Display the results in the ajaxProcess1 div
+            document.getElementById("ajaxProcess1").innerText = data.result;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });*/
+
+      /* document
+        .getElementById("secondButton")
+        .addEventListener("click", function () {
+          fetch("/process2", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ key: "value" }), // Adjust the payload as needed
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Display the results in the ajaxProcess2 div
+              document.getElementById("ajaxProcess2").innerText = data.result;
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        }); */
+    </script>
+  </body>
+</html>

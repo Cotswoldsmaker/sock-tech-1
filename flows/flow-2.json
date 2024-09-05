@@ -1,0 +1,24 @@
+{
+  "name": "Flow 2",
+  "steps": [
+    {
+      "step": "socksPurchased"
+    },
+    {
+      "step": "email",
+      "arg": {
+        "testAddress": "test@test.com",
+        "subject": "Payment received!",
+        "body": "Thank you!"
+      }
+    },
+    {
+      "step": "email",
+      "arg": {
+        "testAddress": "test@test.com",
+        "subject": "Socks dispatched!",
+        "body": "Get ready!"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Flow 1",
+  "steps": [
+    {
+      "step": "websiteSignup"
+    },
+    {
+      "step": "wait",
+      "arg": { "minutes": 120 }
+    },
+    {
+      "step": "email",
+      "arg": {
+        "testAddress": "test@test.com",
+        "subject": "Welcome!",
+        "body": "Need some socks?"
+      }
+    }
+  ]
+}
